@@ -1,9 +1,13 @@
 import React from "react";
 import "./App.css";
 
-function HelloWorld(){
-  return(
-    <div id="hello">Hello World!!</div>
+function HelloWorld(props) {
+  console.log(props);
+  return (
+    <div id="hello">
+      <h3>{props.subtitle}</h3>
+      {props.mytext}
+    </div>
   );
 }
 
@@ -17,7 +21,14 @@ function HelloWorld(){
  */
 
 function App() {
-  return <div>This is my component: <HelloWorld/> <HelloWorld/></div>;
+  return (
+    <div>
+      This is my component:{" "}
+      <HelloWorld mytext="Hello Oscar" subtitle="Subtitle1" />{" "}
+      <HelloWorld mytext="Hola Mundo" subtitle="Subtitle2" />{" "}
+      <HelloWorld mytext="Hello!" subtitle="Subtitle3" />
+    </div>
+  );
 }
 
 export default App;
