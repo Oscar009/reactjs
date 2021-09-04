@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Tasks.css";
+import PropTypes from 'prop-types';
 
 class Task extends Component {
 
@@ -7,7 +8,7 @@ class Task extends Component {
     return{
       fonrSize: '20px',
       color: this.props.task.done ? 'gray' : 'black',
-      textDecoration: this.props.task.done ? 'line-throug' : 'none' 
+      textDecoration: this.props.task.done ? 'none' : 'line-throug' 
     }
   }
 
@@ -21,6 +22,10 @@ class Task extends Component {
       </div>
     );
   }
+}
+
+Task.propTypes = {
+  task: PropTypes.object.isRequired
 }
 
 const btnDelete = {
